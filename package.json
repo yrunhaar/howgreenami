@@ -1,0 +1,48 @@
+{
+  "name": "mycarbonfootprint",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3004",
+    "build": "next build",
+    "start": "npx serve@latest out -l 3004",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "data:fetch": "node scripts/fetch-all-data.mjs"
+  },
+  "dependencies": {
+    "@visx/axis": "^3.12.0",
+    "@visx/curve": "^3.12.0",
+    "@visx/event": "^3.12.0",
+    "@visx/gradient": "^3.12.0",
+    "@visx/group": "^3.12.0",
+    "@visx/responsive": "^3.12.0",
+    "@visx/scale": "^3.12.0",
+    "@visx/shape": "^3.12.0",
+    "@visx/text": "^3.12.0",
+    "@visx/tooltip": "^3.12.0",
+    "framer-motion": "^12.38.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.7",
+    "next": "16.2.1",
+    "qrcode": "^1.5.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "jsdom": "^29.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.2"
+  }
+}
