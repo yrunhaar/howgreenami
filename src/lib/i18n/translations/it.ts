@@ -14,7 +14,7 @@ export const it: Dictionary = {
       "{country} emette {value} tonnellate di CO2 per persona all'anno. Vedi dove ti collochi e come si confronta con l'obiettivo climatico.",
   },
   nav: {
-    home: "Calcolatore",
+    home: "Quanto sono verde?",
     compare: "Confronta paesi",
     methodology: "Metodologia",
     faq: "FAQ",
@@ -28,7 +28,7 @@ export const it: Dictionary = {
     subheadline:
       "Dieta, auto, voli, riscaldamento. Convertiamo il tuo stile di vita in tonnellate di CO2 all'anno e lo confrontiamo con il tuo paese, il mondo e l'obiettivo di Parigi.",
     chooseCountryLabel: "Dove vivi?",
-    geoDetectingLabel: "Stiamo rilevando il tuo paese...",
+    geoDetectingLabel: "Stiamo rilevando il tuo paese. .",
     geoDetectedLabel: "Pensiamo che tu sia in {country}. Sbagliato? Scegli un altro paese sotto.",
     youAreInLabel: "Mostro i dati per {country}",
     orPick: "o scegli un paese",
@@ -213,7 +213,7 @@ export const it: Dictionary = {
   common: {
     tonsCO2Unit: "tCO2",
     perPersonPerYear: "per persona all'anno",
-    loading: "Caricamento...",
+    loading: "Caricamento. .",
     errorTitle: "Qualcosa è andato storto",
     errorBody: "Ricarica la pagina. Se il problema persiste, apri una issue su GitHub.",
   },
@@ -222,7 +222,7 @@ export const it: Dictionary = {
     subtitle: "Il tuo anno in CO2, nel contesto.",
     preparedFor: "Preparato per: {country}, {date}",
     downloadButton: "Scarica PDF",
-    generatingLabel: "Generazione del rapporto...",
+    generatingLabel: "Generazione del rapporto. .",
     methodology: "Come abbiamo calcolato",
     source: "Fonte",
     footer: "howgreenami.org",

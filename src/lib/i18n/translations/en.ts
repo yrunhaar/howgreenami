@@ -14,7 +14,7 @@ export const en: Dictionary = {
       "{country} emits {value} tonnes of CO2 per person per year. See where you fit, and how that compares to the climate target.",
   },
   nav: {
-    home: "Calculator",
+    home: "How Green Am I?",
     compare: "Compare countries",
     methodology: "Methodology",
     faq: "FAQ",
@@ -28,7 +28,7 @@ export const en: Dictionary = {
     subheadline:
       "Diet, driving, flying, heating. We turn your lifestyle into tonnes of CO2 per year, then compare it to your country, the world, and the Paris-aligned target.",
     chooseCountryLabel: "Where do you live?",
-    geoDetectingLabel: "Detecting your country...",
+    geoDetectingLabel: "Detecting your country. .",
     geoDetectedLabel: "We think you are in {country}. Wrong? Pick another below.",
     youAreInLabel: "Showing data for {country}",
     orPick: "or pick a country",
@@ -214,7 +214,7 @@ export const en: Dictionary = {
   common: {
     tonsCO2Unit: "tCO2",
     perPersonPerYear: "per person per year",
-    loading: "Loading...",
+    loading: "Loading. .",
     errorTitle: "Something went wrong",
     errorBody: "Refresh the page. If it keeps happening, please open an issue on GitHub.",
   },
@@ -223,7 +223,7 @@ export const en: Dictionary = {
     subtitle: "Your year in CO2, in context.",
     preparedFor: "Prepared for: {country}, {date}",
     downloadButton: "Download PDF",
-    generatingLabel: "Generating your report...",
+    generatingLabel: "Generating your report. .",
     methodology: "How we calculated this",
     source: "Source",
     footer: "howgreenami.org",

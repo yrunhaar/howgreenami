@@ -29,11 +29,12 @@ export default function CompareContent() {
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
-      <header className="mb-8">
-        <h1 className="text-4xl mb-3">{t.compare.heading}</h1>
-        <p className="text-lg text-text-muted">{t.compare.intro}</p>
-      </header>
+    <main className="bg-bg-primary text-text-primary min-h-screen pt-20 pb-16 px-4">
+      <article className="max-w-3xl mx-auto">
+        <h1 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
+          {t.compare.heading}
+        </h1>
+        <p className="text-text-secondary text-lg leading-relaxed mb-10">{t.compare.intro}</p>
 
       <div className="rounded-2xl border border-border-subtle bg-bg-card shadow-card p-6 mb-6 flex flex-wrap items-center gap-2">
         {picks.map((code) => (
@@ -104,6 +105,7 @@ export default function CompareContent() {
       <p className="mt-6 text-xs text-text-muted">
         Data: Our World in Data / Global Carbon Project (2022) and IEA Electricity Information.
       </p>
-    </article>
+      </article>
+    </main>
   );
 }

@@ -14,7 +14,7 @@ export const ja: Dictionary = {
       "{country} は一人当たり年間 {value} トンのCO2を排出しています。あなたの位置と、気候目標との比較を確認しましょう。",
   },
   nav: {
-    home: "計算ツール",
+    home: "私はどれだけグリーン？",
     compare: "国を比較",
     methodology: "計算方法",
     faq: "よくある質問",
@@ -28,7 +28,7 @@ export const ja: Dictionary = {
     subheadline:
       "食生活、車、飛行機、暖房。あなたのライフスタイルを年間のCO2トン数に換算し、お住まいの国、世界、パリ協定目標と比較します。",
     chooseCountryLabel: "お住まいの国は？",
-    geoDetectingLabel: "国を判定中...",
+    geoDetectingLabel: "国を判定中. .",
     geoDetectedLabel: "{country} にいらっしゃるようです。違う場合は下から選択してください。",
     youAreInLabel: "{country} のデータを表示中",
     orPick: "または国を選択",
@@ -213,7 +213,7 @@ export const ja: Dictionary = {
   common: {
     tonsCO2Unit: "tCO2",
     perPersonPerYear: "1人あたり年間",
-    loading: "読み込み中...",
+    loading: "読み込み中. .",
     errorTitle: "問題が発生しました",
     errorBody: "ページを再読み込みしてください。問題が続く場合は、GitHub で issue を開いてください。",
   },
@@ -222,7 +222,7 @@ export const ja: Dictionary = {
     subtitle: "あなたの一年を CO2 で、文脈とともに。",
     preparedFor: "対象：{country}、{date}",
     downloadButton: "PDF をダウンロード",
-    generatingLabel: "レポートを作成中...",
+    generatingLabel: "レポートを作成中. .",
     methodology: "計算方法について",
     source: "出典",
     footer: "howgreenami.org",

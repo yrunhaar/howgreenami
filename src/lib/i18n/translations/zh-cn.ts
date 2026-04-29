@@ -14,7 +14,7 @@ export const zhCn: Dictionary = {
       "{country} 每人每年排放 {value} 吨二氧化碳。看看你处在哪里，以及与气候目标相比如何。",
   },
   nav: {
-    home: "计算器",
+    home: "我有多绿？",
     compare: "国家对比",
     methodology: "方法论",
     faq: "常见问题",
@@ -28,7 +28,7 @@ export const zhCn: Dictionary = {
     subheadline:
       "饮食、开车、飞行、取暖。我们将你的生活方式换算成每年的二氧化碳吨数，并与你所在的国家、世界平均值和《巴黎协定》目标进行比较。",
     chooseCountryLabel: "你住在哪里？",
-    geoDetectingLabel: "正在检测你所在的国家...",
+    geoDetectingLabel: "正在检测你所在的国家. .",
     geoDetectedLabel: "我们认为你在 {country}。不对？请在下方选择其他国家。",
     youAreInLabel: "正在显示 {country} 的数据",
     orPick: "或选择国家",
@@ -213,7 +213,7 @@ export const zhCn: Dictionary = {
   common: {
     tonsCO2Unit: "tCO2",
     perPersonPerYear: "每人每年",
-    loading: "加载中...",
+    loading: "加载中. .",
     errorTitle: "出错了",
     errorBody: "请刷新页面。如果问题持续出现，请在 GitHub 上提交 issue。",
   },
@@ -222,7 +222,7 @@ export const zhCn: Dictionary = {
     subtitle: "你这一年的二氧化碳排放，配上参照。",
     preparedFor: "为以下情况准备：{country}，{date}",
     downloadButton: "下载 PDF",
-    generatingLabel: "正在生成报告...",
+    generatingLabel: "正在生成报告. .",
     methodology: "我们如何计算",
     source: "来源",
     footer: "howgreenami.org",

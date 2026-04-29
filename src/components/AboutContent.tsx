@@ -6,28 +6,40 @@ import { ABOUT } from "@/lib/i18n/content/about";
 export default function AboutContent() {
   const { locale } = useLanguage();
   const c = ABOUT[locale];
+
   return (
-    <article className="max-w-3xl mx-auto px-4 py-12 space-y-10">
-      <header>
-        <h1 className="text-4xl mb-3">{c.h1}</h1>
-        <p className="text-lg text-text-muted">{c.intro}</p>
-      </header>
-      <Block title={c.howItWorks.heading} body={c.howItWorks.body} />
-      <Block title={c.why.heading} body={c.why.body} />
-      <Block title={c.limits.heading} body={c.limits.body} />
-      <section>
-        <h2 className="text-2xl mb-2">{c.contact.heading}</h2>
-        <p className="text-text-primary">{c.contact.body}</p>
-      </section>
-    </article>
+    <main className="bg-bg-primary text-text-primary min-h-screen pt-20 pb-16 px-4">
+      <article className="max-w-3xl mx-auto">
+        <h1 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-8">
+          {c.h1}
+        </h1>
+
+        <p className="text-text-secondary text-lg leading-relaxed mb-10">
+          {c.intro}
+        </p>
+
+        <Block heading={c.howItWorks.heading} body={c.howItWorks.body} />
+        <Block heading={c.why.heading} body={c.why.body} />
+        <Block heading={c.limits.heading} body={c.limits.body} />
+
+        <section className="mb-10">
+          <h2 className="font-[family-name:var(--font-heading)] text-2xl font-bold mb-4">
+            {c.contact.heading}
+          </h2>
+          <p className="text-text-secondary leading-relaxed">{c.contact.body}</p>
+        </section>
+      </article>
+    </main>
   );
 }
 
-function Block({ title, body }: { title: string; body: readonly string[] }) {
+function Block({ heading, body }: { heading: string; body: readonly string[] }) {
   return (
-    <section>
-      <h2 className="text-2xl mb-3">{title}</h2>
-      <div className="space-y-3 text-text-primary">
+    <section className="mb-10">
+      <h2 className="font-[family-name:var(--font-heading)] text-2xl font-bold mb-4">
+        {heading}
+      </h2>
+      <div className="space-y-3 text-text-secondary leading-relaxed">
         {body.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

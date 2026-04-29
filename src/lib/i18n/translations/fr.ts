@@ -14,7 +14,7 @@ export const fr: Dictionary = {
       "{country} émet {value} tonnes de CO2 par personne et par an. Voyez où vous vous situez, et comment cela se compare à l'objectif climatique.",
   },
   nav: {
-    home: "Calculateur",
+    home: "Suis-je écologique ?",
     compare: "Comparer les pays",
     methodology: "Méthodologie",
     faq: "FAQ",
@@ -28,7 +28,7 @@ export const fr: Dictionary = {
     subheadline:
       "Alimentation, voiture, vols, chauffage. Nous convertissons votre mode de vie en tonnes de CO2 par an, puis le comparons à votre pays, au monde et à l'objectif aligné sur l'Accord de Paris.",
     chooseCountryLabel: "Où vivez-vous ?",
-    geoDetectingLabel: "Détection de votre pays...",
+    geoDetectingLabel: "Détection de votre pays. .",
     geoDetectedLabel: "Nous pensons que vous êtes en {country}. Faux ? Choisissez un autre pays ci-dessous.",
     youAreInLabel: "Données affichées pour {country}",
     orPick: "ou choisissez un pays",
@@ -213,7 +213,7 @@ export const fr: Dictionary = {
   common: {
     tonsCO2Unit: "tCO2",
     perPersonPerYear: "par personne et par an",
-    loading: "Chargement...",
+    loading: "Chargement. .",
     errorTitle: "Quelque chose s'est mal passé",
     errorBody: "Rechargez la page. Si le problème persiste, ouvrez une issue sur GitHub.",
   },
@@ -222,7 +222,7 @@ export const fr: Dictionary = {
     subtitle: "Votre année en CO2, en contexte.",
     preparedFor: "Préparé pour : {country}, {date}",
     downloadButton: "Télécharger le PDF",
-    generatingLabel: "Génération du rapport...",
+    generatingLabel: "Génération du rapport. .",
     methodology: "Comment nous avons calculé",
     source: "Source",
     footer: "howgreenami.org",

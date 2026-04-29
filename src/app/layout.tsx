@@ -26,11 +26,11 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   metadataBase: new URL("https://howgreenami.org"),
   title: {
-    default: "How Green Am I? — Personal Carbon Footprint Calculator",
+    default: "How Green Am I? · Personal Carbon Footprint Calculator",
     template: "%s | How Green Am I?",
   },
   description:
-    "Find out where you really stand on carbon. Diet, driving, flying, heating — see your tonnes of CO2 next to your country average, the world average, and the Paris-aligned target. Open data for 50+ countries, 8 languages, no tracking.",
+    "Find out where you really stand on carbon. Diet, driving, flying, heating: see your tonnes of CO2 next to your country average, the world average, and the Paris-aligned target. Open data for 50+ countries, 8 languages, no tracking.",
   keywords: [
     "how green am I",
     "carbon footprint calculator",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "How Green Am I? — See Where You Stand on Carbon",
+    title: "How Green Am I? · See Where You Stand on Carbon",
     description:
-      "Diet, driving, flying, heating — see your tonnes of CO2 next to your country average and the climate target. Real numbers, no login.",
+      "Diet, driving, flying, heating. See your tonnes of CO2 next to your country average and the climate target. Real numbers, no login.",
     siteName: "How Green Am I?",
     locale: "en_US",
     url: "https://howgreenami.org",
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
         url: "https://howgreenami.org/og-image.png",
         width: 1200,
         height: 630,
-        alt: "How Green Am I? — Personal carbon footprint vs your country and the Paris target",
+        alt: "How Green Am I? · Personal carbon footprint vs your country and the Paris target",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "How Green Am I? — Personal Carbon Footprint",
+    title: "How Green Am I? · Personal Carbon Footprint",
     description:
       "Real emission factors, real country averages, real climate targets. See your tonnes of CO2.",
     images: ["https://howgreenami.org/og-image.png"],
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Inline boot script — set theme before React hydration to prevent flash.
+ * Inline boot script. set theme before React hydration to prevent flash.
  * Resolution order:
  *   1. user's stored preference (localStorage 'theme'),
  *   2. system preference if explicitly dark (prefers-color-scheme: dark),
@@ -103,7 +103,7 @@ const themeScript = `
   (function() {
     try {
       var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var theme = stored || 'light';
       document.documentElement.setAttribute('data-theme', theme);
     } catch(e) {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -144,7 +144,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen">
         <ThemeProvider>
           <LanguageProvider>
             <Navigation />
