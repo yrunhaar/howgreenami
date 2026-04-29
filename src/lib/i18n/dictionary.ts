@@ -198,7 +198,7 @@ export interface Dictionary {
       readonly heading: string;
       readonly body: string;
       readonly howpoorami: string;
-      readonly canIaffordahouse: string;
+      readonly howaffordable: string;
     };
   };
   readonly footer: {

@@ -26,8 +26,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "How big is my carbon footprint? | mycarbonfootprint.org",
-    template: "%s | mycarbonfootprint.org",
+    default: "How big is my carbon footprint? | howgreenami.org",
+    template: "%s | howgreenami.org",
   },
   description:
     "A free, open tool that turns your lifestyle into tonnes of CO2 per year, then puts that number next to your country average, the world average, and the Paris-aligned target.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_US",
     url: SITE_URL,
-    images: [{ url: SITE_OG_IMAGE, width: 1200, height: 630, alt: "mycarbonfootprint.org" }],
+    images: [{ url: SITE_OG_IMAGE, width: 1200, height: 630, alt: "howgreenami.org" }],
   },
   twitter: {
     card: "summary_large_image",

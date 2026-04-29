@@ -1,4 +1,4 @@
-# mycarbonfootprint.org
+# howgreenami.org
 
 How big is your carbon footprint? An open, free, multi-language tool that turns your lifestyle into a tonnes-of-CO2e estimate, then puts it next to your country average, the world average, and the Paris-aligned budget.
 
@@ -40,7 +40,7 @@ pnpm test         # vitest
 Same design system, same data philosophy, different question:
 
 - howpoorami.org - personal wealth percentiles
-- canIaffordahouse.org - housing affordability across countries
+- howaffordable.org - housing affordability across countries
 
 All three by Yohan Runhaar - https://yohanrunhaar.com
 

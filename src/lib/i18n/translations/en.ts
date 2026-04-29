@@ -3,7 +3,7 @@ import type { Dictionary } from "../dictionary";
 export const en: Dictionary = {
   meta: {
     siteTitle: "How big is my carbon footprint?",
-    homeTitleTemplate: "How big is my carbon footprint? | mycarbonfootprint.org",
+    homeTitleTemplate: "How big is my carbon footprint? | howgreenami.org",
     homeDescription:
       "A free, open tool that turns your lifestyle into tonnes of CO2 per year, then puts that number next to your country average, the world average, and the Paris-aligned target.",
     homeOgTitle: "How big is your carbon footprint?",
@@ -196,7 +196,7 @@ export const en: Dictionary = {
       heading: "Sister projects",
       body: "Same design, different question.",
       howpoorami: "How poor am I?",
-      canIaffordahouse: "Can I afford a house?",
+      howaffordable: "Can I afford a house?",
     },
   },
   footer: {
@@ -220,7 +220,7 @@ export const en: Dictionary = {
     generatingLabel: "Generating your report...",
     methodology: "How we calculated this",
     source: "Source",
-    footer: "mycarbonfootprint.org",
+    footer: "howgreenami.org",
     cover: {
       heading: "Your annual carbon footprint",
       subhead: "{tons} tCO2 per year",

@@ -28,7 +28,7 @@ export interface AboutContent {
 }
 
 const en: AboutContent = {
-  h1: "About mycarbonfootprint.org",
+  h1: "About howgreenami.org",
   intro:
     "This is a free, open tool that turns your year of choices into a single number: tonnes of CO2 equivalent. It places that number next to your country average, the world average, and the Paris-aligned target for 2030. No login. No tracking. Static pages.",
   howItWorks: {
@@ -59,7 +59,7 @@ const en: AboutContent = {
   contact: {
     heading: "Who made this",
     body:
-      "Yohan Runhaar (yohanrunhaar.com), with help from open data communities. Same family as howpoorami.org and canIaffordahouse.org.",
+      "Yohan Runhaar (yohanrunhaar.com), with help from open data communities. Same family as howpoorami.org and howaffordable.org.",
   },
 };
 

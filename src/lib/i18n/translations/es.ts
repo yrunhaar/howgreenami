@@ -3,7 +3,7 @@ import type { Dictionary } from "../dictionary";
 export const es: Dictionary = {
   meta: {
     siteTitle: "¿Qué huella de carbono dejo?",
-    homeTitleTemplate: "¿Qué huella de carbono dejo? | mycarbonfootprint.org",
+    homeTitleTemplate: "¿Qué huella de carbono dejo? | howgreenami.org",
     homeDescription:
       "Una herramienta gratuita y abierta que convierte tu estilo de vida en toneladas de CO2 al año, y la compara con la media de tu país, la mundial y el objetivo del Acuerdo de París.",
     homeOgTitle: "¿Qué huella de carbono dejas?",
@@ -195,7 +195,7 @@ export const es: Dictionary = {
       heading: "Proyectos hermanos",
       body: "Mismo diseño, otra pregunta.",
       howpoorami: "¿Qué tan pobre soy?",
-      canIaffordahouse: "¿Puedo permitirme una casa?",
+      howaffordable: "¿Puedo permitirme una casa?",
     },
   },
   footer: {
@@ -219,7 +219,7 @@ export const es: Dictionary = {
     generatingLabel: "Generando tu informe...",
     methodology: "Cómo lo calculamos",
     source: "Fuente",
-    footer: "mycarbonfootprint.org",
+    footer: "howgreenami.org",
     cover: {
       heading: "Tu huella de carbono anual",
       subhead: "{tons} tCO2 al año",
