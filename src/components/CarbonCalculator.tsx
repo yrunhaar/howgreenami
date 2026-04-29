@@ -70,8 +70,8 @@ export default function CarbonCalculator({ initialCountry }: Props) {
 
   return (
     <section className="max-w-3xl mx-auto px-4 mt-10">
-      <div className="card">
-        <div className="flex items-center justify-between text-sm text-[var(--muted)] mb-3">
+      <div className="rounded-2xl border border-border-subtle bg-bg-card shadow-card p-6">
+        <div className="flex items-center justify-between text-sm text-text-muted mb-3">
           <span>
             {interpolate(t.calculator.stepLabel, {
               current: stepIndex + 1,
@@ -82,7 +82,7 @@ export default function CarbonCalculator({ initialCountry }: Props) {
         </div>
 
         <h2 className="text-2xl mb-2">{t.calculator.heading}</h2>
-        <p className="text-[var(--muted)] mb-6">{t.calculator.intro}</p>
+        <p className="text-text-muted mb-6">{t.calculator.intro}</p>
 
         <CountrySelectMini
           label={t.home.chooseCountryLabel}
@@ -113,7 +113,7 @@ export default function CarbonCalculator({ initialCountry }: Props) {
             type="button"
             disabled={stepIndex === 0}
             onClick={() => setStepIndex(Math.max(0, stepIndex - 1))}
-            className="px-4 py-2 rounded-lg border border-[var(--border)] text-[var(--fg)] disabled:opacity-40"
+            className="px-4 py-2 rounded-lg border border-border-subtle text-text-primary disabled:opacity-40"
           >
             {t.calculator.back}
           </button>
@@ -121,7 +121,7 @@ export default function CarbonCalculator({ initialCountry }: Props) {
             <button
               type="button"
               onClick={() => setStepIndex(stepIndex + 1)}
-              className="px-5 py-2 rounded-lg bg-[var(--accent)] text-white font-semibold"
+              className="px-5 py-2 rounded-lg bg-accent-periwinkle text-white font-semibold"
             >
               {t.calculator.next} →
             </button>
@@ -129,7 +129,7 @@ export default function CarbonCalculator({ initialCountry }: Props) {
             <button
               type="button"
               onClick={() => setShowResult(true)}
-              className="px-5 py-2 rounded-lg bg-[var(--accent)] text-white font-semibold"
+              className="px-5 py-2 rounded-lg bg-accent-periwinkle text-white font-semibold"
             >
               {t.calculator.seeResults}
             </button>
@@ -137,7 +137,7 @@ export default function CarbonCalculator({ initialCountry }: Props) {
         </div>
       </div>
 
-      <div className="mt-6 text-center text-sm text-[var(--muted)]">
+      <div className="mt-6 text-center text-sm text-text-muted">
         Anchor: world average {formatTons(GLOBAL_ANCHORS.worldAverage, locale)} tCO2/yr · Paris-aligned 2030: {" "}
         {formatTons(GLOBAL_ANCHORS.parisAligned2030, locale)} tCO2/yr.
       </div>
@@ -156,11 +156,11 @@ function CountrySelectMini({
 }) {
   return (
     <label className="block">
-      <span className="block text-sm text-[var(--muted)] mb-1">{label}</span>
+      <span className="block text-sm text-text-muted mb-1">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--card)] text-[var(--fg)]"
+        className="w-full px-3 py-2 rounded-lg border border-border-subtle bg-bg-card text-text-primary"
       >
         {COUNTRY_CODES.sort((a, b) =>
           COUNTRIES[a].name.localeCompare(COUNTRIES[b].name),
@@ -186,7 +186,7 @@ function DietStep({
   return (
     <div>
       <h3 className="text-xl mb-2">{t.calculator.diet.heading}</h3>
-      <p className="text-sm text-[var(--muted)] mb-4">{t.calculator.diet.help}</p>
+      <p className="text-sm text-text-muted mb-4">{t.calculator.diet.help}</p>
       <div className="grid sm:grid-cols-2 gap-2">
         {opts.map((o) => (
           <button
@@ -195,12 +195,12 @@ function DietStep({
             onClick={() => onChange(o)}
             className={`text-left p-3 rounded-lg border transition ${
               value === o
-                ? "border-[var(--accent)] bg-[var(--accent-soft)]"
-                : "border-[var(--border)] hover:border-[var(--muted)]"
+                ? "border-accent-periwinkle bg-accent-periwinkle/15"
+                : "border-border-subtle hover:border-text-muted"
             }`}
           >
-            <div className="font-semibold text-[var(--fg)]">{t.calculator.diet.options[o]}</div>
-            <div className="text-xs text-[var(--muted)] mt-0.5">
+            <div className="font-semibold text-text-primary">{t.calculator.diet.options[o]}</div>
+            <div className="text-xs text-text-muted mt-0.5">
               {t.calculator.diet.optionsHelp[o]}
             </div>
           </button>
@@ -222,7 +222,7 @@ function TransportStep({
   return (
     <div className="space-y-5">
       <h3 className="text-xl mb-1">{t.calculator.transport.heading}</h3>
-      <p className="text-sm text-[var(--muted)]">{t.calculator.transport.help}</p>
+      <p className="text-sm text-text-muted">{t.calculator.transport.help}</p>
 
       <NumberField
         label={t.calculator.transport.carKmLabel}
@@ -289,7 +289,7 @@ function HomeStep({
   return (
     <div className="space-y-5">
       <h3 className="text-xl mb-1">{t.calculator.home.heading}</h3>
-      <p className="text-sm text-[var(--muted)]">{t.calculator.home.help}</p>
+      <p className="text-sm text-text-muted">{t.calculator.home.help}</p>
 
       <NumberField
         label={t.calculator.home.householdSizeLabel}
@@ -332,7 +332,7 @@ function ConsumptionStep({
   return (
     <div>
       <h3 className="text-xl mb-2">{t.calculator.consumption.heading}</h3>
-      <p className="text-sm text-[var(--muted)] mb-4">{t.calculator.consumption.help}</p>
+      <p className="text-sm text-text-muted mb-4">{t.calculator.consumption.help}</p>
       <div className="grid sm:grid-cols-3 gap-2">
         {opts.map((o) => (
           <button
@@ -341,14 +341,14 @@ function ConsumptionStep({
             onClick={() => onChange(o)}
             className={`text-left p-3 rounded-lg border transition ${
               value === o
-                ? "border-[var(--accent)] bg-[var(--accent-soft)]"
-                : "border-[var(--border)] hover:border-[var(--muted)]"
+                ? "border-accent-periwinkle bg-accent-periwinkle/15"
+                : "border-border-subtle hover:border-text-muted"
             }`}
           >
-            <div className="font-semibold text-[var(--fg)]">
+            <div className="font-semibold text-text-primary">
               {t.calculator.consumption.options[o]}
             </div>
-            <div className="text-xs text-[var(--muted)] mt-0.5">
+            <div className="text-xs text-text-muted mt-0.5">
               {t.calculator.consumption.optionsHelp[o]}
             </div>
           </button>
@@ -371,8 +371,8 @@ function NumberField({
 }) {
   return (
     <label className="block">
-      <span className="block text-sm font-medium text-[var(--fg)]">{label}</span>
-      {help && <span className="block text-xs text-[var(--muted)] mt-0.5">{help}</span>}
+      <span className="block text-sm font-medium text-text-primary">{label}</span>
+      {help && <span className="block text-xs text-text-muted mt-0.5">{help}</span>}
       <input
         type="number"
         inputMode="numeric"
@@ -382,7 +382,7 @@ function NumberField({
           const n = Number(e.target.value);
           onChange(Number.isFinite(n) ? n : 0);
         }}
-        className="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--card)] text-[var(--fg)]"
+        className="mt-1 w-full px-3 py-2 rounded-lg border border-border-subtle bg-bg-card text-text-primary"
       />
     </label>
   );
@@ -401,11 +401,11 @@ function SelectField({
 }) {
   return (
     <label className="block">
-      <span className="block text-sm font-medium text-[var(--fg)]">{label}</span>
+      <span className="block text-sm font-medium text-text-primary">{label}</span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--card)] text-[var(--fg)]"
+        className="mt-1 w-full px-3 py-2 rounded-lg border border-border-subtle bg-bg-card text-text-primary"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>

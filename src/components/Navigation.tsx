@@ -8,14 +8,11 @@ import { useDictionary, useLanguage } from "./LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { localePath, stripLocale } from "@/lib/i18n/urls";
 
-const NAV_KEYS = ["home", "compare", "methodology", "faq", "about"] as const;
+const NAV_KEYS = ["home", "compare"] as const;
 
 const NAV_PATHS: Record<(typeof NAV_KEYS)[number], string> = {
   home: "/",
   compare: "/compare",
-  methodology: "/methodology",
-  faq: "/faq",
-  about: "/about",
 };
 
 export default function Navigation() {
@@ -54,20 +51,20 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className="sticky top-0 z-50 bg-[var(--bg)]/85 backdrop-blur-xl border-b border-[var(--border)]"
+        className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-xl border-b border-border-subtle"
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="max-w-6xl mx-auto px-4 h-12 sm:h-14 flex items-center justify-between gap-2">
+        <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 h-12 sm:h-14 flex items-center justify-between gap-2">
           <Link
             href={localePath(locale, "/")}
             onClick={() => setOpen(false)}
-            className="font-[var(--font-heading)] text-base sm:text-lg font-bold text-[var(--fg)] no-underline whitespace-nowrap shrink-0"
+            className="font-[family-name:var(--font-heading)] text-sm sm:text-lg font-bold text-text-primary hover:text-accent-periwinkle transition-colors whitespace-nowrap shrink-0"
           >
-            🌱 howgreenami
+            🌱 {t.nav.home}
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5 sm:gap-1">
             {NAV_KEYS.map((key) => {
               const href = localePath(locale, NAV_PATHS[key]);
               const isActive = isItemActive(key);
@@ -76,10 +73,10 @@ export default function Navigation() {
                   key={key}
                   href={href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors no-underline whitespace-nowrap ${
+                  className={`px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     isActive
-                      ? "bg-[var(--accent-soft)] text-[var(--accent)]"
-                      : "text-[var(--muted)] hover:text-[var(--fg)] hover:bg-[var(--card)]"
+                      ? "bg-accent-periwinkle/15 text-accent-periwinkle"
+                      : "text-text-secondary hover:text-text-primary hover:bg-bg-card"
                   }`}
                 >
                   {t.nav[key]}
@@ -99,7 +96,7 @@ export default function Navigation() {
               aria-label={open ? t.nav.close : t.nav.menu}
               aria-expanded={open}
               aria-controls="mobile-nav-drawer"
-              className="p-2 rounded-full text-[var(--muted)] hover:text-[var(--fg)] hover:bg-[var(--card)] transition-colors"
+              className="p-2 rounded-full text-text-secondary hover:text-text-primary hover:bg-bg-card transition-colors"
             >
               {open ? <CloseIcon /> : <MenuIcon />}
             </button>
@@ -121,7 +118,7 @@ export default function Navigation() {
           className="absolute inset-0 bg-black/40 backdrop-blur-sm"
         />
         <div
-          className={`absolute left-0 right-0 top-12 bg-[var(--bg)] border-b border-[var(--border)] shadow-xl transition-transform duration-200 ${
+          className={`absolute left-0 right-0 top-12 bg-bg-primary border-b border-border-subtle shadow-xl transition-transform duration-200 ${
             open ? "translate-y-0" : "-translate-y-2"
           }`}
         >
@@ -135,10 +132,10 @@ export default function Navigation() {
                   href={href}
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => setOpen(false)}
-                  className={`px-4 py-3 rounded-xl text-base font-medium no-underline transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-base font-medium transition-colors ${
                     isActive
-                      ? "bg-[var(--accent-soft)] text-[var(--accent)]"
-                      : "text-[var(--muted)] hover:text-[var(--fg)] hover:bg-[var(--card)]"
+                      ? "bg-accent-periwinkle/15 text-accent-periwinkle"
+                      : "text-text-secondary hover:text-text-primary hover:bg-bg-card"
                   }`}
                 >
                   {t.nav[key]}
@@ -159,7 +156,7 @@ function ThemeToggleButton({ theme, toggleTheme }: { theme: "light" | "dark"; to
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className="p-2 rounded-full text-[var(--muted)] hover:text-[var(--fg)] hover:bg-[var(--card)] transition-colors"
+      className="ml-1 sm:ml-2 p-1.5 sm:p-2 rounded-full text-text-secondary hover:text-text-primary hover:bg-bg-card transition-all duration-200"
     >
       {theme === "dark" ? (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

@@ -203,6 +203,12 @@ export const fr: Dictionary = {
     source: "Sources",
     license: "Licence",
     madeBy: "Réalisé par Yohan Runhaar",
+    about: "À propos",
+    faq: "FAQ",
+    methodology: "Méthodologie",
+    github: "GitHub",
+    support: "Offrez-moi un café",
+    buildDateTemplate: "Données du {date}",
   },
   common: {
     tonsCO2Unit: "tCO2",

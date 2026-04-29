@@ -1,19 +1,14 @@
 {
-  "name": "How Poor Am I?",
-  "short_name": "HowPoorAmI",
+  "name": "How Green Am I?",
+  "short_name": "HowGreenAmI",
   "icons": [
     {
       "src": "/icon.svg",
       "type": "image/svg+xml",
       "sizes": "any"
-    },
-    {
-      "src": "/apple-icon.png",
-      "type": "image/png",
-      "sizes": "180x180"
     }
   ],
-  "theme_color": "#1a1a2e",
-  "background_color": "#1a1a2e",
+  "theme_color": "#2D8E7A",
+  "background_color": "#f5f0eb",
   "display": "standalone"
 }

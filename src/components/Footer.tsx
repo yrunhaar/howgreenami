@@ -2,46 +2,81 @@
 
 import Link from "next/link";
 import { useDictionary, useLanguage } from "./LanguageProvider";
+import { interpolate } from "@/lib/i18n/dictionary";
 import { localePath } from "@/lib/i18n/urls";
+
+const BUILD_DATE = new Date().toISOString().split("T")[0];
+
+const KOFI_URL = "https://ko-fi.com/yrunhaar";
 
 export default function Footer() {
   const t = useDictionary();
   const { locale } = useLanguage();
 
+  const footerLinks = [
+    { defaultPath: "/about", label: t.footer.about },
+    { defaultPath: "/faq", label: t.footer.faq },
+    { defaultPath: "/methodology", label: t.footer.methodology },
+  ];
+
   return (
-    <footer className="border-t border-[var(--border)] mt-16">
-      <div className="max-w-6xl mx-auto px-4 py-10">
+    <footer className="border-t border-border-subtle px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-6xl mx-auto text-center">
         <SisterProjects />
-        <div className="flex flex-col md:flex-row justify-between gap-6 mt-8">
-          <div className="text-sm text-[var(--muted)]">
-            <div className="text-[var(--fg)] font-semibold mb-1">🌱 howgreenami.org</div>
-            <div>{t.footer.tagline}</div>
-            <div className="mt-2">
-              {t.footer.madeBy} ·{" "}
-              <a href="https://yohanrunhaar.com" target="_blank" rel="noopener">
-                yohanrunhaar.com
-              </a>
-            </div>
-          </div>
-          <div className="text-sm text-[var(--muted)] flex flex-col gap-1">
-            <Link href={localePath(locale, "/methodology")} className="text-[var(--muted)] hover:text-[var(--fg)]">
-              {t.footer.source}
-            </Link>
-            <a
-              href="https://github.com/yrunhaar/howgreenami"
-              target="_blank"
-              rel="noopener"
-              className="text-[var(--muted)] hover:text-[var(--fg)]"
-            >
-              GitHub · MIT {t.footer.license}
-            </a>
-          </div>
-        </div>
+        <nav
+          aria-label="Footer navigation"
+          className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-text-muted"
+        >
+          {footerLinks.map((link, index) => (
+            <span key={link.defaultPath} className="flex items-center gap-4">
+              {index > 0 && (
+                <span aria-hidden="true" className="text-border-subtle">
+                  &middot;
+                </span>
+              )}
+              <Link
+                href={localePath(locale, link.defaultPath)}
+                className="hover:text-accent-periwinkle transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            </span>
+          ))}
+          <span aria-hidden="true" className="text-border-subtle">
+            &middot;
+          </span>
+          <a
+            href="https://github.com/yrunhaar/howgreenami"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent-periwinkle transition-colors duration-200"
+          >
+            {t.footer.github}
+          </a>
+        </nav>
+
+        <a
+          href={KOFI_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-accent-amber transition-colors duration-200"
+        >
+          <span aria-hidden="true">☕</span>
+          <span>{t.footer.support}</span>
+        </a>
+
+        <p className="text-xs text-text-muted/60 mt-3">
+          {interpolate(t.footer.buildDateTemplate, { date: BUILD_DATE })}
+        </p>
       </div>
     </footer>
   );
 }
 
+/**
+ * Cross-promotion strip linking the three sister apps in this family.
+ * The current site is shown as the active pill; the other two are clickable.
+ */
 function SisterProjects() {
   const sites = [
     { id: "howpoorami", emoji: "💸", label: "howpoorami.org", url: "https://howpoorami.org" },
@@ -51,13 +86,13 @@ function SisterProjects() {
   const current = "howgreenami";
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
-      <span className="text-[var(--muted)] mr-1">Sister projects:</span>
+    <div className="mb-6 flex flex-wrap items-center justify-center gap-2 text-xs">
+      <span className="text-text-muted/70 mr-1">Sister projects:</span>
       {sites.map((s) => {
         const isCurrent = s.id === current;
         const className = isCurrent
-          ? "inline-flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--card)] text-[var(--muted)] px-3 py-1"
-          : "inline-flex items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] hover:text-[var(--accent)] text-[var(--fg)] px-3 py-1 transition-colors no-underline";
+          ? "inline-flex items-center gap-1 rounded-full border border-border-subtle bg-bg-card text-text-muted/70 px-3 py-1"
+          : "inline-flex items-center gap-1 rounded-full border border-border-subtle bg-bg-card hover:border-accent-periwinkle/50 hover:text-accent-periwinkle text-text-secondary px-3 py-1 transition-colors";
         const inner = (
           <>
             <span aria-hidden="true">{s.emoji}</span>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -7,7 +7,7 @@ import SupportRail from "@/components/SupportRail";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { buildHreflangAlternates } from "@/lib/i18n/urls";
-import { SITE_URL, SITE_NAME, SITE_OG_IMAGE } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-heading",
@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "700"],
 });
 
-const inter = Inter({
+const firaCode = Fira_Code({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
@@ -24,24 +24,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL("https://howgreenami.org"),
   title: {
-    default: "How big is my carbon footprint? | howgreenami.org",
-    template: "%s | howgreenami.org",
+    default: "How Green Am I? — Personal Carbon Footprint Calculator",
+    template: "%s | How Green Am I?",
   },
   description:
-    "A free, open tool that turns your lifestyle into tonnes of CO2 per year, then puts that number next to your country average, the world average, and the Paris-aligned target.",
+    "Find out where you really stand on carbon. Diet, driving, flying, heating — see your tonnes of CO2 next to your country average, the world average, and the Paris-aligned target. Open data for 50+ countries, 8 languages, no tracking.",
   keywords: [
+    "how green am I",
     "carbon footprint calculator",
     "personal carbon footprint",
     "CO2 emissions per person",
     "Paris Agreement target",
-    "climate impact",
+    "1.5C target",
+    "climate impact calculator",
     "diet carbon emissions",
     "flight carbon emissions",
     "household emissions",
     "carbon footprint by country",
-    "1.5C target",
+    "Our World in Data",
+    "DEFRA emission factors",
+    "carbon inequality",
+    "climate inequality",
   ],
   alternates: {
     canonical: SITE_URL,
@@ -49,35 +54,51 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "How big is your carbon footprint?",
+    title: "How Green Am I? — See Where You Stand on Carbon",
     description:
-      "Diet, driving, flying, heating. See your tonnes of CO2 next to the country average and the climate target. Real numbers, no login.",
-    siteName: SITE_NAME,
+      "Diet, driving, flying, heating — see your tonnes of CO2 next to your country average and the climate target. Real numbers, no login.",
+    siteName: "How Green Am I?",
     locale: "en_US",
-    url: SITE_URL,
-    images: [{ url: SITE_OG_IMAGE, width: 1200, height: 630, alt: "howgreenami.org" }],
+    url: "https://howgreenami.org",
+    images: [
+      {
+        url: "https://howgreenami.org/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "How Green Am I? — Personal carbon footprint vs your country and the Paris target",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "How big is your carbon footprint?",
+    title: "How Green Am I? — Personal Carbon Footprint",
     description:
-      "Real numbers, real comparisons. Tonnes of CO2 per year, alongside your country, the world, and the Paris target.",
-    images: [SITE_OG_IMAGE],
+      "Real emission factors, real country averages, real climate targets. See your tonnes of CO2.",
+    images: ["https://howgreenami.org/og-image.png"],
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
+/**
+ * Inline boot script — set theme before React hydration to prevent flash.
+ * Resolution order:
+ *   1. user's stored preference (localStorage 'theme'),
+ *   2. system preference if explicitly dark (prefers-color-scheme: dark),
+ *   3. default to light.
+ */
 const themeScript = `
   (function() {
     try {
@@ -90,11 +111,15 @@ const themeScript = `
   })();
 `;
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
+      className={`${playfairDisplay.variable} ${firaCode.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -105,12 +130,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: SITE_NAME,
+              name: "How Green Am I?",
               description:
-                "Free personal carbon footprint calculator. Compare your tonnes of CO2 to your country and to climate targets.",
+                "Interactive personal carbon footprint calculator with country, world, and Paris-aligned comparisons.",
               applicationCategory: "EnvironmentalApplication",
               operatingSystem: "Any",
-              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
             }),
           }}
         />
@@ -119,7 +148,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ThemeProvider>
           <LanguageProvider>
             <Navigation />
-            <main className="flex-1">{children}</main>
+            {children}
             <SupportRail />
             <Footer />
           </LanguageProvider>

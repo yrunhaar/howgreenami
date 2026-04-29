@@ -203,6 +203,12 @@ export const ja: Dictionary = {
     source: "データ出典",
     license: "ライセンス",
     madeBy: "Yohan Runhaar 作",
+    about: "概要",
+    faq: "よくある質問",
+    methodology: "手法",
+    github: "GitHub",
+    support: "コーヒーをおごる",
+    buildDateTemplate: "データ更新日 {date}",
   },
   common: {
     tonsCO2Unit: "tCO2",

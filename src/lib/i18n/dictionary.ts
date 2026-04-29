@@ -206,6 +206,12 @@ export interface Dictionary {
     readonly source: string;
     readonly license: string;
     readonly madeBy: string;
+    readonly about: string;
+    readonly faq: string;
+    readonly methodology: string;
+    readonly github: string;
+    readonly support: string;
+    readonly buildDateTemplate: string;
   };
   readonly common: {
     readonly tonsCO2Unit: string;
