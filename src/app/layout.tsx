@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: "https://howgreenami.org",
     images: [
       {
-        url: "https://howgreenami.org/og-image.png",
+        url: "https://howgreenami.org/opengraph-image",
         width: 1200,
         height: 630,
         alt: "How Green Am I? · Personal carbon footprint vs your country and the Paris target",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "How Green Am I? · Personal Carbon Footprint",
     description:
       "Real emission factors, real country averages, real climate targets. See your tonnes of CO2.",
-    images: ["https://howgreenami.org/og-image.png"],
+    images: ["https://howgreenami.org/opengraph-image"],
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
