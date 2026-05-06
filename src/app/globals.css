@@ -20,13 +20,17 @@
   --accent-rose: #A5404E;
   --accent-amber: #997700;
   --accent-sage: #2D8E7A;
-  --accent-periwinkle: #3170A0;
+  /* App-primary override: howgreenami uses sage as its primary accent.
+   * `--accent-periwinkle` is wired to sage so the cluster's shared
+   * "primary" call-sites (buttons, active nav, focus rings) read green
+   * here without refactoring every component. */
+  --accent-periwinkle: #2D8E7A;
   --accent-lavender: #7B3A96;
   --border-subtle: #d6cfc7;
   --scrollbar-track: #f5f0eb;
   --scrollbar-thumb: #d6cfc7;
   --scrollbar-thumb-hover: #78716c;
-  --selection-bg: rgba(74, 85, 162, 0.2);
+  --selection-bg: rgba(45, 142, 122, 0.2);
 }
 
 /* ==========================================================================
@@ -47,7 +51,8 @@
   --accent-rose: #CC6677;
   --accent-amber: #DDCC77;
   --accent-sage: #44AA99;
-  --accent-periwinkle: #88CCEE;
+  /* Match the light-mode override: green is sage. */
+  --accent-periwinkle: #44AA99;
   --accent-lavender: #AA4499;
   --border-subtle: #1f2942;
   --scrollbar-track: #0b0f1a;

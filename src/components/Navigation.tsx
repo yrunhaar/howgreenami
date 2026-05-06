@@ -8,11 +8,12 @@ import { useDictionary, useLanguage } from "./LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { localePath, stripLocale } from "@/lib/i18n/urls";
 
-const NAV_KEYS = ["home", "compare"] as const;
+const NAV_KEYS = ["home", "compare", "report"] as const;
 
 const NAV_PATHS: Record<(typeof NAV_KEYS)[number], string> = {
   home: "/",
   compare: "/compare",
+  report: "/report",
 };
 
 export default function Navigation() {

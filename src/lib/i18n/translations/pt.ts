@@ -33,6 +33,34 @@ export const pt: Dictionary = {
     youAreInLabel: "A mostrar dados de {country}",
     orPick: "ou escolha um país",
   },
+  country: {
+    headlineTemplate: "How green is the average person in {country}?",
+    verdictBelowParis: "Below the Paris-aligned target",
+    verdictBelowWorld: "Below the world average",
+    verdictAboveWorld: "Above the world average",
+    verdictHighest: "Among the highest emitters per person",
+    bodyTemplate:
+      "{country} emits {value} tCO2 per person per year, {worldComparison}, and {parisComparison}. Ranked {rank} of {total} countries by per-capita emissions.",
+    bodyMultiplierAbove: "{factor}× the world average",
+    bodyMultiplierBelow: "{factor}× lower than the world average",
+    bodyParisAbove: "{factor}× the Paris-aligned 2030 target",
+    bodyParisBelow: "below the Paris-aligned 2030 target",
+    statPerCapitaLabel: "Per-capita CO2",
+    statPerCapitaSub: "per person, per year",
+    statTotalLabel: "Total emissions",
+    statTotalSub: "{population}M people",
+    statGridLabel: "Electricity grid",
+    statGridSub: "CO2 per kWh of electricity",
+    historyHeading: "How {country}'s emissions changed over time",
+    historyBodyTemplate:
+      "{country} per-capita emissions peaked at {peakValue} tCO2 in {peakYear}. Today: {todayValue} tCO2. {trend} The world average over the same period went from {worldStart} tCO2 in {worldYear} to {worldToday} tCO2 today.",
+    historyTrendDropTemplate: "That's a {pct}% drop since {startYear}.",
+    historyTrendRiseTemplate: "That's a {pct}% rise since {startYear}.",
+    historyTrendFlat: "Roughly flat across the period.",
+    calculatorHeadingTemplate: "Calculate your own footprint in {country}",
+    calculatorSubheadingTemplate:
+      "Diet, driving, flying, heating. We turn your lifestyle into tonnes of CO2 per year and compare it to {country}'s average.",
+  },
   calculator: {
     heading: "Conte-nos sobre o seu ano",
     intro:
@@ -250,5 +278,84 @@ export const pt: Dictionary = {
       home: "Primeiro isolar, depois eletrificar o aquecimento (bomba de calor), é a maior alavanca em casa.",
       system: "Votar, onde poupa e onde tem o banco moldam o sistema em que vive.",
     },
+    landingTitle: "Your Personal Carbon Footprint Report",
+    landingFreeBadge: "Free. No signup, no payment, no email required",
+    landingCta: "Generate my report",
+    landingFeatureA: {
+      title: "Your tonnes, in context",
+      body:
+        "Computed from DEFRA emission factors and your country's electricity grid intensity. Compared to your country, the world, and the Paris-aligned target.",
+    },
+    landingFeatureB: {
+      title: "Country and historical context",
+      body:
+        "Where your country sits in the global emissions league, and how its per-capita CO2 evolved over decades.",
+    },
+    landingFeatureC: {
+      title: "Fully private",
+      body:
+        "The report is built in your browser. Nothing is sent to a server. No email, no account, no tracking.",
+    },
+    landingPicker: {
+      title: "Generate your report",
+      subtitle: "Pick a country, enter your annual tonnes, and we'll do the rest.",
+      countryLabel: "Country",
+      tonsLabel: "Your annual emissions (tCO2)",
+      tonsHelp: "If you've used the calculator, your number is shown above. Otherwise pick a representative value or use the home page calculator first.",
+      generateButton: "Generate the PDF",
+      generatingButton: "Generating...",
+    },
+    pdfPageLabel: "Page",
+    pdfFooterAttribution: "howgreenami.org · Open data · No tracking",
+    pdfCoverGeneratedLabel: "Generated",
+    pdfYourFootprintLabel: "Your annual footprint",
+    pdfPercentileLeadIn: "You emit",
+    pdfPercentilePopulation: "tonnes of CO2 equivalent per year",
+    pdfCoverNarrativeAboveTemplate:
+      "Your annual footprint of {tons} tCO2 sits {factor}× above the world per-capita average and {parisFactor}× above the Paris-aligned 2030 budget. The pages that follow break down where your emissions come from, how they compare across borders, and what shifts the number most.",
+    pdfCoverNarrativeBelowTemplate:
+      "Your annual footprint of {tons} tCO2 sits below the world per-capita average. The pages that follow show your category breakdown, where your country fits in the global picture, and what would push the number further down.",
+    pdfSection1Title: "Where you stand",
+    pdfSection1Body:
+      "Three reference lines: the Paris-aligned 2030 personal budget, the world per-capita average, and your country's per-capita average. Your number is plotted alongside.",
+    pdfSection2Title: "Where it comes from",
+    pdfSection2Body:
+      "Your emissions split by category. Diet, transport, flights, home energy, and consumption. The biggest line is usually the easiest to move.",
+    pdfSection3Title: "Country context",
+    pdfSection3Body:
+      "Your country's per-capita emissions, ranked against every other country in the dataset, with grid intensity and total national output for context.",
+    pdfCrossCountryTitle: "Same lifestyle, different country",
+    pdfCrossCountryBody:
+      "Your behavior held constant; only the country grid and food system change. Same flights, same diet, same kilometres driven — different emission factors.",
+    pdfCrossCountryColCountry: "Country",
+    pdfCrossCountryColPerCapita: "Per-capita CO2",
+    pdfCrossCountryColRatio: "Vs your country",
+    pdfCrossCountryInsight:
+      "The grid intensity gap is the largest single multiplier. The same EV emits roughly 6× less per km in France than in Poland. Same kettle. Same air-con. Same numbers behind your behavior — different climate outcomes.",
+    pdfHistoricalTitle: "How emissions evolved",
+    pdfHistoricalBody:
+      "Per-capita CO2 in your country across the period for which Our World in Data has territorial-emissions records. Higher line means higher per-person output.",
+    pdfHistoricalInsightTemplate:
+      "{country} per-capita emissions were {firstValue} tCO2 in {firstYear}. By {lastYear}: {lastValue} tCO2. {direction} {magnitude} tCO2 per person over the period.",
+    pdfHistoricalNoData:
+      "No long-running historical series for this country. The cross-country and snapshot pages above still apply.",
+    pdfTakeawaysTitle: "What actually moves the number",
+    pdfTakeawaysIntro:
+      "Personal reads of your snapshot. Action ranked roughly by carbon-per-effort, not by ease.",
+    pdfTakeawaysHigh:
+      "You sit well above the country average. The biggest single move for you is almost certainly air travel: one transatlantic return is 1.6 tCO2, more than a full year of careful driving on a small petrol car.",
+    pdfTakeawaysMedium:
+      "You sit roughly at the country average. The dominant lever from here is shifting one of the big three categories: diet (red meat → plant-based), travel (one long-haul flight skipped), or home (insulation + electrify heat).",
+    pdfTakeawaysLow:
+      "You sit below the country average. The remaining lever is mostly systemic: the grid your home runs on, the food system your supermarket sources from, and how the country builds new transport infrastructure.",
+    pdfTakeawaysGlobalContext:
+      "Personal action is part of the picture, not the whole picture. The bigger lever is collective: how the grid is built, how cities are zoned, how pollution is taxed. Voting and where you bank shape the system you live in.",
+    pdfMethodologyTitle: "Methodology",
+    pdfMethodologyBody:
+      "Diet from Scarborough et al. 2023 (Nature Food). Transport and heating from UK DEFRA Greenhouse Gas Reporting Conversion Factors 2024. Per-capita country emissions from Our World in Data / Global Carbon Project 2022. Electricity grid intensity from IEA Electricity Information 2023. Computation runs entirely client-side; nothing is sent to a server.",
+    pdfTipTitle: "Like this report?",
+    pdfTipBody:
+      "It's free and ad-free. If it's useful, a small Ko-fi tip lets me keep building open educational tools.",
+    pdfFilenameTemplate: "howgreenami-{country}-{date}.pdf",
   },
 };

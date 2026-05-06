@@ -36,6 +36,39 @@ export interface Dictionary {
     readonly youAreInLabel: string;
     readonly orPick: string;
   };
+  /** Country-landing page (`/{country}`) strings. */
+  readonly country: {
+    /** "How green is the average person in {country}?" */
+    readonly headlineTemplate: string;
+    /** Verdict pill labels — color-coded by where the country sits vs Paris/world. */
+    readonly verdictBelowParis: string;
+    readonly verdictBelowWorld: string;
+    readonly verdictAboveWorld: string;
+    readonly verdictHighest: string;
+    /** "{country} emits {value} tCO2 per person per year — {factor}× the world average and {factor2}× the Paris-aligned target. Ranked {rank} of {total} countries by per-capita emissions." */
+    readonly bodyTemplate: string;
+    readonly bodyMultiplierAbove: string;
+    readonly bodyMultiplierBelow: string;
+    readonly bodyParisAbove: string;
+    readonly bodyParisBelow: string;
+    /** Stat card labels */
+    readonly statPerCapitaLabel: string;
+    readonly statPerCapitaSub: string;
+    readonly statTotalLabel: string;
+    readonly statTotalSub: string;
+    readonly statGridLabel: string;
+    readonly statGridSub: string;
+    /** Historical block */
+    readonly historyHeading: string;
+    /** "{country} per-capita emissions peaked at {peakValue} tCO2 in {peakYear}. Today: {todayValue} tCO2. {trend}. The world average over the same period went from {worldStart} tCO2 in {worldYear} to {worldToday} tCO2 today." */
+    readonly historyBodyTemplate: string;
+    readonly historyTrendDropTemplate: string;
+    readonly historyTrendRiseTemplate: string;
+    readonly historyTrendFlat: string;
+    /** Calculator section */
+    readonly calculatorHeadingTemplate: string;
+    readonly calculatorSubheadingTemplate: string;
+  };
   readonly calculator: {
     readonly heading: string;
     readonly intro: string;
@@ -252,6 +285,56 @@ export interface Dictionary {
       readonly home: string;
       readonly system: string;
     };
+    readonly landingTitle: string;
+    readonly landingFreeBadge: string;
+    readonly landingCta: string;
+    readonly landingFeatureA: { readonly title: string; readonly body: string };
+    readonly landingFeatureB: { readonly title: string; readonly body: string };
+    readonly landingFeatureC: { readonly title: string; readonly body: string };
+    readonly landingPicker: {
+      readonly title: string;
+      readonly subtitle: string;
+      readonly countryLabel: string;
+      readonly tonsLabel: string;
+      readonly tonsHelp: string;
+      readonly generateButton: string;
+      readonly generatingButton: string;
+    };
+    readonly pdfPageLabel: string;
+    readonly pdfFooterAttribution: string;
+    readonly pdfCoverGeneratedLabel: string;
+    readonly pdfYourFootprintLabel: string;
+    readonly pdfPercentileLeadIn: string;
+    readonly pdfPercentilePopulation: string;
+    readonly pdfCoverNarrativeAboveTemplate: string;
+    readonly pdfCoverNarrativeBelowTemplate: string;
+    readonly pdfSection1Title: string;
+    readonly pdfSection1Body: string;
+    readonly pdfSection2Title: string;
+    readonly pdfSection2Body: string;
+    readonly pdfSection3Title: string;
+    readonly pdfSection3Body: string;
+    readonly pdfCrossCountryTitle: string;
+    readonly pdfCrossCountryBody: string;
+    readonly pdfCrossCountryColCountry: string;
+    readonly pdfCrossCountryColPerCapita: string;
+    readonly pdfCrossCountryColRatio: string;
+    readonly pdfCrossCountryInsight: string;
+    readonly pdfHistoricalTitle: string;
+    readonly pdfHistoricalBody: string;
+    readonly pdfHistoricalInsightTemplate: string;
+    readonly pdfHistoricalNoData: string;
+    readonly pdfTakeawaysTitle: string;
+    readonly pdfTakeawaysIntro: string;
+    readonly pdfTakeawaysHigh: string;
+    readonly pdfTakeawaysMedium: string;
+    readonly pdfTakeawaysLow: string;
+    readonly pdfTakeawaysGlobalContext: string;
+    readonly pdfMethodologyTitle: string;
+    readonly pdfMethodologyBody: string;
+    readonly pdfTipTitle: string;
+    readonly pdfTipBody: string;
+    readonly pdfFilenameTemplate: string;
   };
 }
 
