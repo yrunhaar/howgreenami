@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/flights", priority: 0.85, changeFrequency: "monthly" },
     { path: "/diet", priority: 0.85, changeFrequency: "monthly" },
     { path: "/electric-cars", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/map", priority: 0.9, changeFrequency: "weekly" },
     { path: "/heating", priority: 0.8, changeFrequency: "monthly" },
     { path: "/transport", priority: 0.8, changeFrequency: "monthly" },
     { path: "/report", priority: 0.85, changeFrequency: "monthly" },

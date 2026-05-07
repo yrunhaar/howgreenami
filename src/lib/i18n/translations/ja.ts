@@ -16,6 +16,7 @@ export const ja: Dictionary = {
   nav: {
     home: "私はどれだけグリーン？",
     compare: "国を比較",
+    map: "Map",
     methodology: "計算方法",
     faq: "よくある質問",
     about: "このプロジェクトについて",
@@ -32,6 +33,20 @@ export const ja: Dictionary = {
     geoDetectedLabel: "{country} にいらっしゃるようです。違う場合は下から選択してください。",
     youAreInLabel: "{country} のデータを表示中",
     orPick: "または国を選択",
+  },
+  map: {
+    title: "World map of per-capita CO2 emissions",
+    subtitle:
+      "Per-person CO2 by country. Tap or click any country for the full per-capita context, historical trajectory, and how its number compares to the Paris-aligned 2030 target.",
+    metricPerCapita: "Per-capita CO2",
+    metricGrid: "Grid carbon intensity",
+    metricTotal: "Total emissions",
+    legendLow: "Lower",
+    legendHigh: "Higher",
+    noDataLabel: "No data",
+    source: "Per-capita CO2 from Our World in Data / Global Carbon Project (2022). Grid carbon intensity from IEA Electricity Information.",
+    previewTitle: "Where countries sit on the world map",
+    previewCta: "Open the full map",
   },
   country: {
     headlineTemplate: "{country} の平均的な人はどれくらいグリーンですか？",

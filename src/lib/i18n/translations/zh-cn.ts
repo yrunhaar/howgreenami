@@ -16,6 +16,7 @@ export const zhCn: Dictionary = {
   nav: {
     home: "我有多绿？",
     compare: "国家对比",
+    map: "Map",
     methodology: "方法论",
     faq: "常见问题",
     about: "关于",
@@ -32,6 +33,20 @@ export const zhCn: Dictionary = {
     geoDetectedLabel: "我们认为你在 {country}。不对？请在下方选择其他国家。",
     youAreInLabel: "正在显示 {country} 的数据",
     orPick: "或选择国家",
+  },
+  map: {
+    title: "World map of per-capita CO2 emissions",
+    subtitle:
+      "Per-person CO2 by country. Tap or click any country for the full per-capita context, historical trajectory, and how its number compares to the Paris-aligned 2030 target.",
+    metricPerCapita: "Per-capita CO2",
+    metricGrid: "Grid carbon intensity",
+    metricTotal: "Total emissions",
+    legendLow: "Lower",
+    legendHigh: "Higher",
+    noDataLabel: "No data",
+    source: "Per-capita CO2 from Our World in Data / Global Carbon Project (2022). Grid carbon intensity from IEA Electricity Information.",
+    previewTitle: "Where countries sit on the world map",
+    previewCta: "Open the full map",
   },
   country: {
     headlineTemplate: "{country} 的普通人有多绿色？",

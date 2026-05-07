@@ -20,6 +20,7 @@ export interface Dictionary {
   readonly nav: {
     readonly home: string;
     readonly compare: string;
+    readonly map: string;
     readonly methodology: string;
     readonly faq: string;
     readonly about: string;
@@ -35,6 +36,26 @@ export interface Dictionary {
     readonly geoDetectedLabel: string;
     readonly youAreInLabel: string;
     readonly orPick: string;
+  };
+  /** World map page (`/map`) strings. */
+  readonly map: {
+    /** "Per-capita CO2 across the world" */
+    readonly title: string;
+    /** Subtitle / hero body. */
+    readonly subtitle: string;
+    /** Toggle button labels for the metric switcher. */
+    readonly metricPerCapita: string;
+    readonly metricGrid: string;
+    readonly metricTotal: string;
+    /** Legend below the map. */
+    readonly legendLow: string;
+    readonly legendHigh: string;
+    readonly noDataLabel: string;
+    /** Closing paragraph below the map. */
+    readonly source: string;
+    /** Title for the small map preview rendered on /compare. */
+    readonly previewTitle: string;
+    readonly previewCta: string;
   };
   /** Country-landing page (`/{country}`) strings. */
   readonly country: {

@@ -16,6 +16,7 @@ export const it: Dictionary = {
   nav: {
     home: "Quanto sono verde?",
     compare: "Confronta paesi",
+    map: "Map",
     methodology: "Metodologia",
     faq: "FAQ",
     about: "Sul progetto",
@@ -32,6 +33,20 @@ export const it: Dictionary = {
     geoDetectedLabel: "Pensiamo che tu sia in {country}. Sbagliato? Scegli un altro paese sotto.",
     youAreInLabel: "Mostro i dati per {country}",
     orPick: "o scegli un paese",
+  },
+  map: {
+    title: "World map of per-capita CO2 emissions",
+    subtitle:
+      "Per-person CO2 by country. Tap or click any country for the full per-capita context, historical trajectory, and how its number compares to the Paris-aligned 2030 target.",
+    metricPerCapita: "Per-capita CO2",
+    metricGrid: "Grid carbon intensity",
+    metricTotal: "Total emissions",
+    legendLow: "Lower",
+    legendHigh: "Higher",
+    noDataLabel: "No data",
+    source: "Per-capita CO2 from Our World in Data / Global Carbon Project (2022). Grid carbon intensity from IEA Electricity Information.",
+    previewTitle: "Where countries sit on the world map",
+    previewCta: "Open the full map",
   },
   country: {
     headlineTemplate: "Quanto è verde la persona media in {country}?",
